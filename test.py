@@ -2,6 +2,7 @@ import random
 import string
 import os
 
+TESTS_N = 30
 MAIN_BASE1 = f"""#include "libft.h"
 #include <stdio.h>
 
@@ -26,22 +27,35 @@ def input_string():
 def input_uint():
 	return random.randint(0, 2147483647)
 
+def input_char():
+	choice = random.choice([0, 1])
+	if (choice == 0):
+		return '"' + random.choice(string.ascii_letters + string.digits) + '"'
+	if (choice == 1):
+		return "'\\0'"
+
 def tests_substr():
 	tests = ""
-	for i in range(100):
+	for i in range(TESTS_N):
 		tests += "ft_substr({}, {}, {});\n".format(input_string(), input_uint(), input_uint())
 	return tests
 
 def tests_strjoin():
 	tests = ""
-	for i in range(100):
+	for i in range(TESTS_N):
 		tests += "ft_strjoin({}, {});\n".format(input_string(), input_string())
 	return tests
 
 def tests_strtrim():
 	tests = ""
-	for i in range(100):
+	for i in range(TESTS_N):
 		tests += "ft_strtrim({}, {});\n".format(input_string(), input_string())
+	return tests
+
+def tests_split():
+	tests = ""
+	for i in range(TESTS_N):
+		tests += "ft_split({}, {});\n".format(input_string(), input_char())
 	return tests
 
 def create_tests():
@@ -49,6 +63,7 @@ def create_tests():
 	tests += tests_substr()
 	tests += tests_strjoin()
 	tests += tests_strtrim()
+	tests += tests_split()
 	return tests
 
 def create_main():
