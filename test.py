@@ -1,5 +1,6 @@
 import os
-import part1_tests
+import part2_tests
+import bonus_tests
 
 MAIN_BASE1 = f"""#include "libft.h"
 #include <stdio.h>
@@ -16,7 +17,8 @@ MAIN_BASE2 = "\n}\n"
 
 def create_tests():
 	tests = ""
-	tests += part1_tests.tests_part1()
+	tests += part2_tests.tests_part2()
+	tests += bonus_tests.tests_bonus()
 	return tests
 
 def create_main():

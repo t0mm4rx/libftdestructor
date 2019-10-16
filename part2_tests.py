@@ -62,7 +62,7 @@ def tests_mapi():
 		tests += "free(ft_strmapi({}, {}));\n".format(inputs.input_string(), inputs.input_map_func())
 	return tests
 
-def tests_part1():
+def tests_part2():
     tests = ""
     tests += tests_substr()
     tests += tests_strjoin()
