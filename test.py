@@ -42,6 +42,7 @@ else:
 
 def create_tests():
 	tests = ""
+	tests += 'puts("*** Liftdestructor by tmarx !\\n");\n';
 	tests += part2_tests.tests_part2()
 	if (BONUS):
 		tests += bonus_tests.tests_bonus()
