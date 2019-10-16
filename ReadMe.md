@@ -12,7 +12,7 @@ The script will generate a main.c file. It will make your library and link it.
 ```sh
 git clone https://github.com/t0mm4rx/libftdestructor
 cd libftdestructor
-python3.7 path-of-libft [bonus: yes|no]
+python3.7 test.py path-of-libft [bonus: yes|no]
 ```
 
 ## ToDo
