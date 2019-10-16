@@ -3,7 +3,14 @@
 The purpose of tis script is to force the project libft2019 of school 42 to segfault or sigabort.
 
 **Warning !**
+
 This script does NOT test the output of the function, it only tries to make it segfault.
+
+Tests aren't logical, it just tries to crash your lib. For exemple, it sends NULL pointer as function parameter.
+
+Don't use this script in correction, most of projects that passes Moulinette segfaults with this script.
+
+The purpose of this script is only to be 100% sure your libft won't segfault, make your own tests. Please view this tool only as an helper.
 
 Made by tmarx
 
