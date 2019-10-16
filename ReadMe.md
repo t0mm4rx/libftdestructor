@@ -5,6 +5,7 @@ The purpose of tis script is to force the project libft2019 of school 42 to segf
 **Warning !**
 This script does NOT test the output of the function, it only tries to make it segfault.
 
+Made by tmarx
 ## Usage
 The script will generate a main.c file that use a static library of libft. So please copy libft.h and libft.a in the same folder as test.py.
 ```sh
@@ -17,4 +18,4 @@ python3.7 test.py
 ```
 ## ToDo
 - [ ] Part 1 functions
-- [ ] Bonus functions
+- [x] Bonus functions

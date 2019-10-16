@@ -10,6 +10,17 @@ char map(unsigned int i, char c)
 	return ((char) (c + 3));
 }}
 
+void del(void *content)
+{{
+	(void) content;
+}}
+
+void *lstmap(void *content)
+{{
+	(void) content;
+	return ft_calloc(sizeof(char), 1);
+}}
+
 int main()
 {{
 """

@@ -41,3 +41,31 @@ def input_map_func():
 		return "&map"
 	if (choice == 1):
 		return "NULL"
+
+def input_del_func():
+	choice = random.choice([0, 1])
+	if (choice == 0):
+		return "&del"
+	if (choice == 1):
+		return "NULL"
+
+def input_lstmap_func():
+	choice = random.choice([0, 1])
+	if (choice == 0):
+		return "&lstmap"
+	if (choice == 1):
+		return "NULL"
+
+def input_elem():
+	choice = random.choice([0, 1])
+	if (choice == 0):
+		return "ft_lstnew({})".format(input_string())
+	if (choice == 1):
+		return "NULL"
+
+def create_list(n):
+	res = ""
+	res += "t_list *list{} = {};\n".format(n, input_elem())
+	for i in range(random.randint(0, 3)):
+		res += "ft_lstadd_back(&list{}, {});\n".format(n, input_elem())
+	return res
