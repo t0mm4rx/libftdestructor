@@ -25,3 +25,8 @@ python3.7 test.py path-of-libft [bonus: yes|no]
 ## ToDo
 - [ ] Part 1 functions
 - [x] Bonus functions
+
+## Known bugs
+- "Cannot find libft.h"
+  If so, copy paste the libft.h file at the root of libftdestructor
+- Cannot compile bonuses, "undefined symbol ft_function", maybe your bonuses function are not in the same header file. This script isn't compatible with this file structure. Also, check you have a bonus rule in your Makefile.
