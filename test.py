@@ -5,6 +5,7 @@ import sys
 
 MAIN_BASE1 = f"""#include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 char map(unsigned int i, char c)
 {{
