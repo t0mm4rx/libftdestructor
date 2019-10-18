@@ -77,7 +77,7 @@ def tests_lstmap():
     for i in range(TESTS_N):
         nb = random.randint(0, 10000000000)
         tests += inputs.create_list(nb)
-        tests += "ft_lstmap(list{}, {});\n".format(nb, inputs.input_lstmap_func())
+        tests += "ft_lstmap(list{}, {}, {});\n".format(nb, inputs.input_lstmap_func(), inputs.input_del_func())
     return tests
 
 def tests_bonus():
