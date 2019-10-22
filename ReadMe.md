@@ -1,6 +1,6 @@
 # Libftdestructor
 
-The purpose of tis script is to force the project libft2019 of school 42 to segfault or sigabort.
+The purpose of this script is to force the project libft2019 of school 42 to segfault or sigabort.
 
 **Warning !**
 
