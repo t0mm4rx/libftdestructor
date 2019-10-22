@@ -13,6 +13,7 @@ Don't use this script in correction, most of projects that passes Moulinette seg
 The purpose of this script is only to be 100% sure your libft won't segfault, make your own tests. Please view this tool only as an helper.
 
 Made by tmarx
+Design by vgoldman
 
 ## Usage
 The script will generate a main.c file. It will make your library and link it.
