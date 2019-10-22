@@ -27,6 +27,17 @@ int main()
 {{
 """
 MAIN_BASE2 = "\n}\n"
+HEADER = f"""
+\u001b[36;1m
+ _ _ _      __ _      _           _                   _
+| (_) |    / _| |    | |         | |                 | |
+| |_| |__ | |_| |_ __| | ___  ___| |_ _ __ _   _  ___| |_ ___  _ __
+| | | '_ \|  _| __/ _` |/ _ \/ __| __| '__| | | |/ __| __/ _ \| '__|
+| | | |_) | | | || (_| |  __/\__ \ |_| |  | |_| | (__| || (_) | |
+|_|_|_.__/|_|  \__\__,_|\___||___/\__|_|   \__,_|\___|\__\___/|_|\u001b[0m
+                                                         by\u001b[1m tmarx\u001b[0m
+
+"""
 
 BONUS = True
 PATH = "./"
@@ -43,7 +54,6 @@ else:
 
 def create_tests():
 	tests = ""
-	tests += 'puts("*** Libftdestructor by tmarx !\\n");\n';
 	tests += part2_tests.tests_part2()
 	if (BONUS):
 		tests += bonus_tests.tests_bonus()
@@ -66,6 +76,7 @@ def compile_lib():
 def compile_main():
 	os.system("gcc main.c -L{} -lft -g -fsanitize=address && ./a.out".format(PATH))
 
+print(HEADER)
 compile_lib()
 create_main()
 compile_main()
