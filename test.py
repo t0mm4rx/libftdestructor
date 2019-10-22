@@ -39,6 +39,17 @@ HEADER = f"""
 
 """
 
+COMP_RUN = f"""
+\u001b[34;1mCompiling...\u001b[0m
+"""
+
+COMPILATION = f"""
+                      \u001b[32;1mCompilation completed ✓ \u001b[0m
+
+\u001b[34;1mRunning tests...\u001b[0m
+
+"""
+
 BONUS = True
 PATH = "./"
 
@@ -77,6 +88,8 @@ def compile_main():
 	os.system("gcc main.c -L{} -lft -g -fsanitize=address && ./a.out".format(PATH))
 
 print(HEADER)
+print(COMP_RUN)
 compile_lib()
+print(COMPILATION)
 create_main()
 compile_main()
