@@ -1,7 +1,7 @@
 import inputs
 import random
 
-TESTS_N = 30
+TESTS_N = 1000
 
 def tests_lstnew():
     tests = ""

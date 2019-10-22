@@ -1,6 +1,6 @@
 import inputs
 
-TESTS_N = 30
+TESTS_N = 1000
 
 def tests_substr():
 	tests = ""
@@ -11,7 +11,7 @@ def tests_substr():
 
 def tests_strjoin():
 	tests = ""
-	tests += 'puts("* ft_srjoin");';
+	tests += 'puts("* ft_strjoin");';
 	for i in range(TESTS_N):
 		tests += "free(ft_strjoin({}, {}));\n".format(inputs.input_string(), inputs.input_string())
 	return tests
