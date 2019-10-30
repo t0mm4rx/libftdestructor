@@ -2,3 +2,4 @@ a.out*
 main.c
 libft.*
 __pycache__
+tests/

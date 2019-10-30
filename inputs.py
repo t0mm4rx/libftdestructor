@@ -15,7 +15,7 @@ def input_string():
 		return '""'
 
 def input_uint():
-	return random.randint(0, 2147483647)
+	return str(random.randint(0, 2147483647))
 
 def input_int():
 	choice = random.choice([0, 1, 2, 3])
