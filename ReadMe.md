@@ -13,7 +13,7 @@ Don't use this script during corrections, most of projects that passes the Mouli
 The purpose of this script is to be 100% sure your libft won't segfault.
 Make your own tests! Please consider this tool only as a helper.
 
-Made by **tmarx** with help of **vgoldman**
+Made by **tmarx** with the help of **vgoldman**
 
 ## Usage
 ```sh

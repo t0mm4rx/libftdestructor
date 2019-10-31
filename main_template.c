@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../$$1libft.h"
+#include "$$1libft.h"
 
 char map(unsigned int i, char c)
 {
