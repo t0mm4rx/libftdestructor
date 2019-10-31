@@ -17,6 +17,9 @@ def input_string():
 def input_uint():
 	return str(random.randint(0, 2147483647))
 
+def input_short_uint():
+	return str(random.randint(0, 100))
+
 def input_int():
 	choice = random.choice([0, 1, 2, 3])
 	if (choice == 0):

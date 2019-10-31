@@ -23,11 +23,11 @@ sh run.sh <path-of-libft> [12B]
 
 # EXEMPLES
 # Part 1 and 2
-sh run.sh ../libft 12
+sh run.sh ~/libft 12
 # Only bonus
-sh run.sh ../libft B
+sh run.sh ~/libft B
 # All parts
-sh run.sh ../libft
+sh run.sh ~/libft
 ```
 
 ## FAQ
@@ -39,6 +39,29 @@ sh run.sh ../libft
   The subject might change, and tests could not be updated. If so, contact tmarx on the intra or at tom[at]tommarx[dot]fr. You can also try to edit tests yourself and make a pull request.
 
 ## ToDo
-  - [ ] Part 1 functions
-  - [x] Bonus functions
-  - [x] New design
+- [x] Bonus functions
+- [x] New design
+- [ ] memset
+- [ ] bzero
+- [ ] memcpy
+- [ ] memccpy
+- [ ] memmove
+- [ ] memchr
+- [ ] memcmp
+- [x] strlen
+- [x] isalpha
+- [x] isdigit
+- [x] isalnum
+- [x] isascii
+- [x] isprint
+- [x] toupper
+- [x] tolower
+- [x] strchr
+- [x] strrchr
+- [x] strncmp
+- [ ] strlcpy
+- [ ] strlcat
+- [x] strnstr
+- [x] atoi
+- [x] calloc
+- [ ] strdup

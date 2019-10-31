@@ -34,6 +34,8 @@ def fill_prototype(str, list=None):
         str = str.replace("<elem>", inputs.input_elem(), 1)
     while ("<list>" in str):
         str = str.replace("<list>", "list{}".format(list), 1)
+    while ("<suint>" in str):
+        str = str.replace("<suint>", inputs.input_short_uint(), 1)
     return str
 
 def make_test(name, PATH, prototype, n, create_list=False):

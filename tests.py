@@ -11,6 +11,21 @@ def print_tests_header(title):
 
 def part1(PATH):
     print_tests_header("Part 1")
+    functions.make_test("ft_strlen", PATH, "ft_strlen(<string>);", N)
+    functions.make_test("ft_isalpha", PATH, "ft_isalpha(<char>);", N)
+    functions.make_test("ft_isdigit", PATH, "ft_isdigit(<char>);", N)
+    functions.make_test("ft_isalnum", PATH, "ft_isalnum(<char>);", N)
+    functions.make_test("ft_isascii", PATH, "ft_isascii(<char>);", N)
+    functions.make_test("ft_isprint", PATH, "ft_isprint(<char>);", N)
+    functions.make_test("ft_tolower", PATH, "ft_tolower(<int>);", N)
+    functions.make_test("ft_toupper", PATH, "ft_toupper(<int>);", N)
+    functions.make_test("ft_strchr", PATH, "ft_strchr(<string>, <int>);", N)
+    functions.make_test("ft_strrchr", PATH, "ft_strrchr(<string>, <int>);", N)
+    functions.make_test("ft_strncmp", PATH, "ft_strncmp(<string>, <string>, <uint>);", N)
+    functions.make_test("ft_strnstr", PATH, "ft_strnstr(<string>, <string>, <uint>);", N)
+    functions.make_test("ft_atoi", PATH, "ft_atoi(<string>);", N)
+    functions.make_test("ft_calloc", PATH, "free(ft_calloc(<suint>, <suint>));", N)
+    functions.make_test("ft_strdup", PATH, "free(ft_strdup(<string>));", N)
     print('')
 
 def part2(PATH):
