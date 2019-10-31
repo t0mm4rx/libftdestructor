@@ -34,6 +34,7 @@ def fill_prototype(str):
     return str
 
 def make_test(name, PATH, prototype, n):
+    print("{:27s} ".format(name), end="")
     tests = ""
     for i in range(n):
         tests += "\t"
@@ -41,3 +42,4 @@ def make_test(name, PATH, prototype, n):
         tests += "\n"
     create_main(name, PATH, tests)
     compile_main(name, PATH)
+    print("ok")
