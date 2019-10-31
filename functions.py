@@ -19,11 +19,24 @@ def fill_prototype(str):
         str = str.replace("<string>", inputs.input_string(), 1)
     while ("<uint>" in str):
         str = str.replace("<uint>", inputs.input_uint(), 1)
+    while ("<int>" in str):
+        str = str.replace("<int>", inputs.input_int(), 1)
+    while ("<char>" in str):
+        str = str.replace("<char>", inputs.input_char(), 1)
+    while ("<map_func>" in str):
+        str = str.replace("<map_func>", inputs.input_map_func(), 1)
+    while ("<del_func>" in str):
+        str = str.replace("<del_func>", inputs.input_del_func(), 1)
+    while ("<lstmap_func>" in str):
+        str = str.replace("<lstmap_func>", inputs.input_lstmap_func(), 1)
+    while ("<input_elem>" in str):
+        str = str.replace("<input_elem>", inputs.input_elem(), 1)
     return str
 
 def make_test(name, PATH, prototype, n):
     tests = ""
     for i in range(n):
+        tests += "\t"
         tests += fill_prototype(prototype)
         tests += "\n"
     create_main(name, PATH, tests)

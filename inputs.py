@@ -20,13 +20,13 @@ def input_uint():
 def input_int():
 	choice = random.choice([0, 1, 2, 3])
 	if (choice == 0):
-		return random.randint(-2147483648, 2147483647)
+		return str(random.randint(-2147483648, 2147483647))
 	if (choice == 1):
-		return 2147483647
+		return str(2147483647)
 	if (choice == 2):
-		return -2147483648
+		return str(-2147483648)
 	if (choice == 3):
-		return 0
+		return str(0)
 
 def input_char():
 	choice = random.choice([0, 1])

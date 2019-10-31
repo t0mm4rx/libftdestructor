@@ -1,5 +1,6 @@
 import sys
 import tests
+import os
 
 HEADER = f"""
 \u001b[36;1m
@@ -12,6 +13,12 @@ HEADER = f"""
                                                          by\u001b[1m tmarx\u001b[0m
 
 """
+
+def compile_lib(path, bonus):
+	if (bonus):
+		os.system("make bonus -C {}".format(path))
+	else:
+		os.system("make all -C {}".format(path))
 
 if (len(sys.argv) < 2 or len(sys.argv) > 3):
     print("Error! Usage: python3 run.py <path-of-libft> [12B, default all]")
@@ -33,6 +40,9 @@ if (len(sys.argv) == 3):
         PART2 = False
 
 print(HEADER)
+
+print("Compiling libft...")
+compile_lib(PATH, PARTB)
 
 if (PART1):
     tests.part1(PATH)
