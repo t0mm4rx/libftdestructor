@@ -1,5 +1,5 @@
 import inputs
-import os
+import subprocess
 
 def create_main(name, path, tests):
     main_template = ""
@@ -7,12 +7,12 @@ def create_main(name, path, tests):
         main_template = file.read()
     main_template = main_template.replace("$$1", path)
     main_template = main_template.replace("$$2", tests)
-    os.system("mkdir -p tests")
+    subprocess.run("mkdir -p tests", shell=True)
     with open("./tests/{}.c".format(name), "w+") as file:
         file.write(main_template)
 
 def compile_main(name, path):
-    os.system("gcc ./tests/{}.c -L{} -lft -Wall -Werror -Wextra -g3 -fsanitize=address && ./a.out".format(name, path))
+    return subprocess.run("gcc ./tests/{}.c -L{} -lft -Wall -Werror -Wextra -g3 -fsanitize=address && ./a.out".format(name, path), shell=True, stderr=subprocess.PIPE).stderr
 
 def fill_prototype(str):
     while ("<string>" in str):
@@ -34,12 +34,21 @@ def fill_prototype(str):
     return str
 
 def make_test(name, PATH, prototype, n):
-    print("{:27s} ".format(name), end="")
+    print("{:19s} ".format(name), end="")
     tests = ""
     for i in range(n):
         tests += "\t"
         tests += fill_prototype(prototype)
         tests += "\n"
     create_main(name, PATH, tests)
-    compile_main(name, PATH)
-    print("ok")
+    result = compile_main(name, PATH)
+    if (len(result) == 0):
+        print("{:>10s}".format("Ok"))
+        return
+    if ("Abort trap" in str(result)):
+        print("{:>10s}".format("Abort"))
+        return
+    if ("segfault" in str(result)):
+        return
+        print("{:>10s}".format("Segfault"))
+    print("{:>10s}".format("Error"))
