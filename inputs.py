@@ -65,7 +65,7 @@ def input_elem():
 
 def create_list(n):
 	res = ""
-	res += "t_list *list{} = {};\n".format(n, input_elem())
+	res += "\tt_list *list{} = {};\n".format(n, input_elem())
 	for i in range(random.randint(0, 3)):
-		res += "ft_lstadd_back(&list{}, {});\n".format(n, input_elem())
+		res += "\tft_lstadd_back(&list{}, {});\n".format(n, input_elem())
 	return res

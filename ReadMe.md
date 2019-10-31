@@ -14,8 +14,6 @@ The purpose of this script is only to be 100% sure your libft won't segfault, ma
 
 Made by **tmarx**
 
-Designed by **vgoldman**
-
 ## Usage
 The script will generate a main.c file. It will make your library and link it.
 ```sh

@@ -13,6 +13,15 @@ HEADER = f"""
                                                          by\u001b[1m tmarx\u001b[0m
 
 """
+COMP_RUN = f"""
+\u001b[34;1mCompiling...\u001b[0m
+"""
+
+COMPILATION = f"""
+\u001b[32;1mCompilation completed ✓ \u001b[0m
+
+\u001b[34;1mRunning tests...\u001b[0m
+"""
 
 def compile_lib(path, bonus):
 	if (bonus):
@@ -32,7 +41,7 @@ PART1 = True
 PART2 = True
 PARTB = True
 if (len(sys.argv) == 3):
-    if (not "B" in sys.argv[2]):
+    if (not "B" in sys.argv[2] and not "b" in sys.argv[2]):
         PARTB = False
     if (not "1" in sys.argv[2]):
         PART1 = False
@@ -41,9 +50,9 @@ if (len(sys.argv) == 3):
 
 print(HEADER)
 
-print("Compiling libft...")
+print(COMP_RUN)
 compile_lib(PATH, PARTB)
-
+print(COMPILATION)
 if (PART1):
     tests.part1(PATH)
 if (PART2):

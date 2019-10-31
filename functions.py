@@ -1,5 +1,6 @@
 import inputs
 import subprocess
+import random
 
 def create_main(name, path, tests):
     main_template = ""
@@ -14,7 +15,7 @@ def create_main(name, path, tests):
 def compile_main(name, path):
     return subprocess.run("gcc ./tests/{}.c -L{} -lft -Wall -Werror -Wextra -g3 -fsanitize=address && ./a.out".format(name, path), shell=True, stderr=subprocess.PIPE).stderr
 
-def fill_prototype(str):
+def fill_prototype(str, list=None):
     while ("<string>" in str):
         str = str.replace("<string>", inputs.input_string(), 1)
     while ("<uint>" in str):
@@ -29,26 +30,36 @@ def fill_prototype(str):
         str = str.replace("<del_func>", inputs.input_del_func(), 1)
     while ("<lstmap_func>" in str):
         str = str.replace("<lstmap_func>", inputs.input_lstmap_func(), 1)
-    while ("<input_elem>" in str):
-        str = str.replace("<input_elem>", inputs.input_elem(), 1)
+    while ("<elem>" in str):
+        str = str.replace("<elem>", inputs.input_elem(), 1)
+    while ("<list>" in str):
+        str = str.replace("<list>", "list{}".format(list), 1)
     return str
 
-def make_test(name, PATH, prototype, n):
-    print("{:19s} ".format(name), end="")
+def make_test(name, PATH, prototype, n, create_list=False):
     tests = ""
     for i in range(n):
+        nb = None
+        if (create_list):
+            nb = random.randint(0, 10000000000)
+        if (create_list):
+            tests += inputs.create_list(nb)
         tests += "\t"
-        tests += fill_prototype(prototype)
+        tests += fill_prototype(prototype, list=nb)
         tests += "\n"
     create_main(name, PATH, tests)
     result = compile_main(name, PATH)
+    if (len(result) > 0):
+        print("\u001b[31m", end="")
+    else:
+        print("\u001b[32m", end="")
+    print("{:19s} ".format(name), end="")
     if (len(result) == 0):
         print("{:>10s}".format("Ok"))
-        return
-    if ("Abort trap" in str(result)):
+    elif ("Abort trap" in str(result)):
         print("{:>10s}".format("Abort"))
-        return
-    if ("segfault" in str(result)):
-        return
+    elif ("segfault" in str(result)):
         print("{:>10s}".format("Segfault"))
-    print("{:>10s}".format("Error"))
+    else:
+        print("{:>10s}".format("Error"))
+    print("\u001b[0m", end="")
