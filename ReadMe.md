@@ -21,7 +21,7 @@ git clone https://github.com/t0mm4rx/libftdestructor
 cd libftdestructor
 sh run.sh <path-of-libft> [12B]
 
-# Exemples
+# EXEMPLES
 # Part 1 and 2
 sh run.sh ../libft 12
 # Only bonus
@@ -36,7 +36,7 @@ sh run.sh ../libft
 - Cannot compile bonuses, "undefined symbol ft_function"
   Maybe your bonuses function are not in the same header file. This script isn't compatible with this file structure. Also, check if you have a bonus rule in your Makefile.
 - Other errors
-  The subject might change, and tests could not be updated. If so, contact tmarx on the intra or at tom<at>tommarx<dot>fr. You can also try to edit tests yourself and make a pull request.
+  The subject might change, and tests could not be updated. If so, contact tmarx on the intra or at tom[at]@tommarx[dot]fr. You can also try to edit tests yourself and make a pull request.
 
 ## ToDo
   - [ ] Part 1 functions
