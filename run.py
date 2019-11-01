@@ -32,7 +32,7 @@ def compile_lib(path, bonus):
     else:
         result = subprocess.run("make all -C {}".format(path), shell=True, stderr=subprocess.PIPE).stderr
     if (len(result) > 0):
-        print(result)
+        print(str(result))
         print()
         print(COMPILATION_FAIL)
         exit()

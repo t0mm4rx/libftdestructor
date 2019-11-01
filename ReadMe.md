@@ -47,7 +47,7 @@ sh run.sh ~/libft
 - [ ] memccpy
 - [ ] memmove
 - [x] memchr
-- [ ] memcmp
+- [x] memcmp
 - [x] strlen
 - [x] isalpha
 - [x] isdigit
@@ -64,4 +64,4 @@ sh run.sh ~/libft
 - [x] strnstr
 - [x] atoi
 - [x] calloc
-- [ ] strdup
+- [x] strdup

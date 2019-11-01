@@ -6,6 +6,8 @@ def create_main(name, path, tests):
     main_template = ""
     with open("main_template.c", "r") as file:
         main_template = file.read()
+    if (path.startswith("../")):
+        path = "../" + path
     main_template = main_template.replace("$$1", path)
     main_template = main_template.replace("$$2", tests)
     subprocess.run("mkdir -p tests", shell=True)
