@@ -41,12 +41,12 @@ sh run.sh ~/libft
 ## ToDo
 - [x] Bonus functions
 - [x] New design
-- [ ] memset
-- [ ] bzero
+- [x] memset
+- [x] bzero
 - [ ] memcpy
 - [ ] memccpy
 - [ ] memmove
-- [ ] memchr
+- [x] memchr
 - [ ] memcmp
 - [x] strlen
 - [x] isalpha

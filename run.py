@@ -1,6 +1,7 @@
 import sys
 import tests
 import os
+import subprocess
 
 HEADER = f"""
 \u001b[36;1m
@@ -14,20 +15,30 @@ HEADER = f"""
 
 """
 COMP_RUN = f"""
-\u001b[34;1mCompiling...\u001b[0m
+\u001b[34;1mCompiling libft...\u001b[0m
 """
 
-COMPILATION = f"""
-\u001b[32;1mCompilation completed ✓ \u001b[0m
+COMPILATION_SUCCESS = "\u001b[32;1mCompilation completed ✓ \u001b[0m"
+COMPILATION_FAIL = "\u001b[31;1mCompilation failed ✘ \u001b[0m"
 
+COMPILATION = f"""
 \u001b[34;1mRunning tests...\u001b[0m
 """
 
 def compile_lib(path, bonus):
-	if (bonus):
-		os.system("make bonus -C {}".format(path))
-	else:
-		os.system("make all -C {}".format(path))
+    result = ""
+    if (bonus):
+        result = subprocess.run("make bonus -C {}".format(path), shell=True, stderr=subprocess.PIPE).stderr
+    else:
+        result = subprocess.run("make all -C {}".format(path), shell=True, stderr=subprocess.PIPE).stderr
+    if (len(result) > 0):
+        print(result)
+        print()
+        print(COMPILATION_FAIL)
+        exit()
+    else:
+        print()
+        print(COMPILATION_SUCCESS)
 
 if (len(sys.argv) < 2 or len(sys.argv) > 3):
     print("Error! Usage: python3 run.py <path-of-libft> [12B, default all]")

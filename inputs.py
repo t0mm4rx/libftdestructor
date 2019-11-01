@@ -66,6 +66,14 @@ def input_elem():
 	if (choice == 1):
 		return "NULL"
 
+def create_pointer(n, size):
+	choice = random.choice([0, 1])
+	s = ""
+	s += "\tvoid *ptr{} = NULL;\n".format(str(n))
+	if (choice):
+		s += "\tptr{} = malloc(sizeof(char) * {});\n".format(n, str(size))
+	return s
+
 def create_list(n):
 	res = ""
 	res += "\tt_list *list{} = {};\n".format(n, input_elem())

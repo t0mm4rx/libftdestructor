@@ -11,6 +11,10 @@ def print_tests_header(title):
 
 def part1(PATH):
     print_tests_header("Part 1")
+    functions.make_test("ft_memset", PATH, "ft_memset(<pointer>, <char>, <pointer_size>);\n\tfree(<pointer>);", N, create_pointer=True)
+    functions.make_test("ft_bzero", PATH, "ft_bzero(<pointer>, <pointer_size>);\n\tfree(<pointer>);", N, create_pointer=True)
+    functions.make_test("ft_memchr", PATH, "ft_memchr(<pointer>, <int>, <pointer_size>);\n\tfree(<pointer>);", N, create_pointer=True)
+    functions.make_test("ft_memcmp", PATH, "ft_memcmp(<string>, <string>, <uint>);", N)
     functions.make_test("ft_strlen", PATH, "ft_strlen(<string>);", N)
     functions.make_test("ft_isalpha", PATH, "ft_isalpha(<char>);", N)
     functions.make_test("ft_isdigit", PATH, "ft_isdigit(<char>);", N)
